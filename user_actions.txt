@@ -1,0 +1,11 @@
+Morning livecode
+[ ] As an employee, I can log in
+[ ] As a manager, I can add a new meal
+[ ] As a manager, I can list all the meals
+[ ] As a manager, I can add a new customer
+[ ] As a manager, I can list all the customers
+Evening livecode
+[ ] As a manager, I can add a new order
+[ ] As a manager, I can list all the undelivered orders
+[ ] As a rider, I can mark one of my orders as delivered
+[ ] As a rider, I list all my undelivered orders
