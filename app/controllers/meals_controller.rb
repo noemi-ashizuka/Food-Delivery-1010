@@ -17,7 +17,7 @@ class MealsController
     # ask the view to ask for a name
     name = @meals_view.ask_for(:name)
     # ask the view to ask for a price
-    price = @meals_view.ask_for(:price)
+    price = @meals_view.ask_for(:price).to_i
     # make a meal instance
     meal = Meal.new(name: name, price: price)
     # give it to the repo
