@@ -1,9 +1,9 @@
 Morning livecode
 [ ] As an employee, I can log in
-[ ] As a manager, I can add a new meal
-[ ] As a manager, I can list all the meals
-[ ] As a manager, I can add a new customer
-[ ] As a manager, I can list all the customers
+[X] As a manager, I can add a new meal
+[X] As a manager, I can list all the meals
+[X] As a manager, I can add a new customer
+[X] As a manager, I can list all the customers
 Evening livecode
 [ ] As a manager, I can add a new order
 [ ] As a manager, I can list all the undelivered orders

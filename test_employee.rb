@@ -1,7 +1,7 @@
-# require_relative 'app/repositories/employee_repository'
+require_relative 'app/repositories/employee_repository'
 
-# csv = 'data/employees.csv'
+csv = 'data/employees.csv'
 
-# employee_repo = EmployeeRepository.new(csv)
+employee_repo = EmployeeRepository.new(csv)
 
-# p employee_repo
+p employee_repo
