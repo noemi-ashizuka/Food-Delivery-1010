@@ -4,6 +4,8 @@ require_relative 'app/repositories/customer_repository.rb'
 require_relative 'app/controllers/customers_controller.rb'
 require_relative 'app/repositories/employee_repository.rb'
 require_relative 'app/controllers/sessions_controller.rb'
+require_relative 'app/repositories/order_repository.rb'
+require_relative 'app/controllers/orders_controller.rb'
 require_relative 'router.rb'
 
 csv_file_meals = File.join(__dir__, 'data/meals.csv')
@@ -18,7 +20,11 @@ csv_file_employees = File.join(__dir__, 'data/employees.csv')
 employee_repository = EmployeeRepository.new(csv_file_employees)
 sessions_controller = SessionsController.new(employee_repository)
 
-router = Router.new(meals_controller, customers_controller, sessions_controller)
+csv_file_orders = File.join(__dir__, 'data/orders.csv')
+order_repository = OrderRepository.new(csv_file_orders, meal_repository, customer_repository, employee_repository)
+orders_controller = OrdersController.new(meal_repository, customer_repository, employee_repository, order_repository)
+
+router = Router.new(meals_controller, customers_controller, sessions_controller, orders_controller)
 
 router.run
 

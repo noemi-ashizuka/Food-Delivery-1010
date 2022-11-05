@@ -1,8 +1,9 @@
 class Router
-  def initialize(meals_controller, customers_controller, sessions_controller)
+  def initialize(meals_controller, customers_controller, sessions_controller, orders_controller)
     @meals_controller = meals_controller
     @customers_controller = customers_controller
     @sessions_controller = sessions_controller
+    @orders_controller = orders_controller
     @running = true
   end
 
@@ -37,6 +38,8 @@ class Router
     when 2 then @meals_controller.add
     when 3 then @customers_controller.list
     when 4 then @customers_controller.add
+    when 5 then @orders_controller.add
+    when 6 then @orders_controller.list_undelivered_orders
     when 9 then sign_out
     when 0 then stop
     else
@@ -46,8 +49,8 @@ class Router
 
   def route_rider_action(action)
     case action
-    when 1 then puts "TODO"
-    when 2 then puts "TODO"
+    when 1 then @orders_controller.list_my_orders(@employee)
+    when 2 then @orders_controller.mark_as_delivered(@employee)
     when 9 then sign_out
     when 0 then stop
     else
@@ -73,6 +76,8 @@ class Router
     puts "2 - Add new Meal"
     puts "3 - List customers"
     puts "4 - Add new customer"
+    puts "5 - Add new order"
+    puts "6 - Display undelivered orders"
     puts "9 - Sign out"
     puts "0 - Stop and exit the program"
   end
