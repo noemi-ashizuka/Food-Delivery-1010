@@ -7,4 +7,12 @@ class Customer
     @name = attributes[:name] # string
     @address = attributes[:address] # integer
   end
+
+  def self.headers
+    ['id', 'name', 'address']
+  end
+
+  def build_row
+    [@id, @name, @address]
+  end
 end

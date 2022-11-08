@@ -60,5 +60,4 @@ class OrderRepository
       end
     end
   end
-
 end
